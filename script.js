@@ -13,7 +13,7 @@ document.getElementById("upload-form").addEventListener("submit", function(event
     reader.onload = function(e) {
         const imageUrl = e.target.result;
 
-        // Show image on the page
+        // Show image on the webpage
         const itemDiv = document.createElement("div");
         itemDiv.className = "wardrobe-item";
 
@@ -28,7 +28,7 @@ document.getElementById("upload-form").addEventListener("submit", function(event
         itemDiv.appendChild(caption);
         document.getElementById("wardrobe-items").appendChild(itemDiv);
 
-        // Send data to your new API
+        // Send data to your API
         const newItem = {
             image: imageUrl,
             category: category
@@ -41,7 +41,7 @@ document.getElementById("upload-form").addEventListener("submit", function(event
             },
             body: JSON.stringify(newItem)
         }).then(() => {
-            imageInput.value = ""; // Clear the input
+            imageInput.value = ""; // Clear the upload field
         });
 
     };
