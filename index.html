@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Online Wardrobe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>👗 My Online Wardrobe</h1>
+
+    <h2>Add New Item</h2>
+    <form id="upload-form">
+        <select id="category">
+            <option value="tops">Tops</option>
+            <option value="bottoms">Bottoms</option>
+            <option value="shoes">Shoes</option>
+            <option value="accessories">Accessories</option>
+        </select>
+        <input type="file" id="image-upload" accept="image/*">
+        <button type="submit">Add to Wardrobe</button>
+    </form>
+
+    <h2>My Clothes</h2>
+    <div id="wardrobe-items"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

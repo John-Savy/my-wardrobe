@@ -1,0 +1,38 @@
+body {
+    font-family: Arial;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    color: #555;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+select, input, button {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#wardrobe-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.wardrobe-item {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.wardrobe-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
