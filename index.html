@@ -1,66 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Online Wardrobe</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Online Wardrobe</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <h1>👗 My Online Wardrobe</h1>
+  <h1>👗 My Online Wardrobe</h1>
 
-    <h2>Add New Item</h2>
-    <form id="upload-form">
-        <select id="category">
-            <option value="top">Top</option>
-            <option value="bottom">Bottom</option>
-            <option value="shoes">Shoes</option>
-            <option value="accessories">Accessories</option>
-        </select>
-        <br><br>
-        <input type="file" id="image-upload" accept="image/*">
-        <br><br>
-        <button type="submit">Add to Wardrobe</button>
-    </form>
+  <h2>Add New Item</h2>
+  <form id="upload-form">
+    <select id="category">
+      <option value="top">Top</option>
+      <option value="bottom">Bottom</option>
+      <option value="shoes">Shoes</option>
+      <option value="accessories">Accessories</option>
+    </select>
+    <br><br>
+    <input type="file" id="image-upload" accept="image/*">
+    <br><br>
+    <button type="submit">Add to Wardrobe</button>
+  </form>
 
-    <h2>My Clothes</h2>
-    <div id="wardrobe-items"></div>
+  <h2>My Clothes</h2>
+  <div id="wardrobe-items"></div>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        // Import Firebase modules from CDN
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js'; 
-        import { getFirestore, collection, addDoc, getDocs, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js'; 
-        import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js'; 
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
 
-        // Your Firebase config
-        const firebaseConfig = {
-            apiKey: "AIzaSyA3q2R2l_RpXdNcjIF49ozymB5fPOzCz9U",
-            authDomain: "my-wardrobe-app-ee744.firebaseapp.com",
-            projectId: "my-wardrobe-app-ee744",
-            storageBucket: "my-wardrobe-app-ee744.firebasestorage.app",
-            messagingSenderId: "94531859694",
-            appId: "1:94531859694:web:a9b4752c84346e1438afff"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const storage = getStorage(app);
-
-        // Make available globally
-        window.firebase = {
-            db,
-            storage,
-            collection,
-            addDoc,
-            getDocs,
-            onSnapshot,
-            ref,
-            uploadBytes,
-            getDownloadURL
-        };
-    </script>
-
-    <script src="script.js"></script>
+  <!-- Your custom script -->
+  <script src="script.js"></script>
 </body>
 </html>
