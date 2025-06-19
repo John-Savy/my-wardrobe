@@ -64,4 +64,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const { data, error } = await supabase.from("wardrobe_items").select("*");
     if (error) {
       console.error("Load error:", error.message);
-      wardrobeDiv.innerHTML = "<p>❌
+      wardrobeDiv.innerHTML = "<p>❌ Error loading wardrobe</p>";
+      return;
+    }
+
+    wardrobeDiv.innerHTML = "";
+
+    if (data.length === 0) {
+      wardrobeDiv.innerHTML = "<p>No items in wardrobe yet.</p>";
+      return;
+    }
+
+    data.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = "wardrobe-item";
+      div.innerHTML = `
+        <img src="${item.image_url}" alt="${item.category}" style="width:150px;">
+        <p>${item.category}</p>
+      `;
+      wardrobeDiv.appendChild(div);
+    });
+  }
+
+  // Initial load
+  loadWardrobe();
+});
