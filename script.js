@@ -2,7 +2,7 @@
 const SUPABASE_URL = "https://dupstqpmfgjjtuahgxpv.supabase.co"; 
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1cHN0cXBtZmdqanR1YWhneHB2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMTY3MDgsImV4cCI6MjA2NTg5MjcwOH0.q6JFUZbQ4_ZuhhylACj4yREWUd5xWQFCqlBfeOBXAuM";
 
-// Initialize Supabase
+// Initialize Supabase client
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -64,28 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const { data, error } = await supabase.from("wardrobe_items").select("*");
     if (error) {
       console.error("Load error:", error.message);
-      wardrobeDiv.innerHTML = "<p>❌ Error loading wardrobe</p>";
-      return;
-    }
-
-    wardrobeDiv.innerHTML = "";
-
-    if (data.length === 0) {
-      wardrobeDiv.innerHTML = "<p>No items in wardrobe yet.</p>";
-      return;
-    }
-
-    data.forEach((item) => {
-      const div = document.createElement("div");
-      div.className = "wardrobe-item";
-      div.innerHTML = `
-        <img src="${item.image_url}" alt="${item.category}" style="width:150px;">
-        <p>${item.category}</p>
-      `;
-      wardrobeDiv.appendChild(div);
-    });
-  }
-
-  // Initial load
-  loadWardrobe();
-});
+      wardrobeDiv.innerHTML = "<p>❌
