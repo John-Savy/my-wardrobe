@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Online Wardrobe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>👗 My Online Wardrobe</h1>
+
+  <h2>Add New Item</h2>
+  <form id="upload-form">
+    <select id="category">
+      <option value="top">Top</option>
+      <option value="bottom">Bottom</option>
+      <option value="shoes">Shoes</option>
+      <option value="accessories">Accessories</option>
+    </select>
+    <br><br>
+    <input type="file" id="image-upload" accept="image/*">
+    <br><br>
+    <button type="submit">Add to Wardrobe</button>
+  </form>
+
+  <h2>My Clothes</h2>
+  <div id="wardrobe-items"></div>
+
+  <h2>Ask AI for Outfit Suggestion</h2>
+  <textarea id="ai-prompt" placeholder="Your wardrobe will appear here" rows="8" style="width: 100%; max-width: 600px;"></textarea>
+  <button onclick="copyWardrobeToPrompt()">📋 Copy My Wardrobe Info</button>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>    
+
+  <!-- Your custom script -->
+  <script src="script.js"></script>
+</body>
+</html>
