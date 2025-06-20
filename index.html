@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Online Wardrobe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>👗 My Online Wardrobe</h1>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Add New Item</h2>
+      <form id="upload-form">
+        <select id="category" class="form-select">
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+          <option value="shoes">Shoes</option>
+          <option value="accessories">Accessories</option>
+        </select>
+        <input type="text" id="custom-name" placeholder="Give this item a name (e.g., 'Blue T-shirt')" class="form-input">
+        <input type="file" id="image-upload" accept="image/*" class="form-input">
+        <button type="submit" class="form-button">Add to Wardrobe</button>
+      </form>
+    </section>
+
+    <section class="wardrobe-section">
+      <h2>My Clothes</h2>
+      <div id="wardrobe-items" class="wardrobe-items"></div>
+    </section>
+
+    <section class="ai-section">
+      <h2>Ask AI for Outfit Suggestion</h2>
+      <textarea id="ai-prompt" placeholder="Your wardrobe will appear here" class="ai-prompt" rows="8"></textarea>
+      <button onclick="copyWardrobeToPrompt()" class="form-button">📋 Copy My Wardrobe Info</button>
+      <button onclick="getAISuggestion()" class="form-button">💬 Get AI Outfit Suggestion</button>
+    </section>
+
+    <section class="suggestion-section">
+      <h2>AI Outfit Suggestion</h2>
+      <div id="ai-response" class="ai-response"></div>
+    </section>
+  </main>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>       
+
+  <!-- Your custom script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #555;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  text-align: center;
+}
+
+.form-select, .form-input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 10px;
+}
+
+.form-button:hover {
+  background: #0056b3;
+}
+
+.form-button:last-child {
+  margin-right: 0;
+}
+
+.wardrobe-section {
+  text-align: center;
+}
+
+.wardrobe-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.wardrobe-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.wardrobe-item img {
+  max-width: 100%;
+  border-radius: 4px;
+  height: auto;
+}
+
+.wardrobe-item p {
+  margin: 10px 0 5px 0;
+  font-size: 14px;
+}
+
+.wardrobe-item label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.wardrobe-item button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.wardrobe-item button:hover {
+  background: #c82333;
+}
+
+.wardrobe-item input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.ai-section {
+  text-align: center;
+}
+
+.ai-prompt {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.suggestion-section {
+  text-align: center;
+}
+
+.ai-response {
+  margin-top: 10px;
+  padding: 10px;
+  background: #eef;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .form-input, .form-select {
+    width: 100%;
+  }
+
+  .wardrobe-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .form-button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .form-button:last-child {
+    margin-bottom: 0;
+  }
+}
